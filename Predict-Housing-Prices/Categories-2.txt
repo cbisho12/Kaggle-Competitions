@@ -1,0 +1,96 @@
+Don't use  * categories
+
+**********  Just categorical *******
+MSSubClass -> missing MSSubClass_150 in test and only one in train set
+MSZoning   -> there are 4 NA in the test data
+Street
+Alley
+LotShape
+LandContour
+	*Utilities -> test set is all the same 
+LotConfig
+LandSlope
+Neighborhood
+Condition1 -> combine these two into one feature while 
+Condition2 ->  one hot encoding (leave out norm as feature)
+BldgType
+	*HouseStyle -> test data missing HouseStyle_2.5Fin
+	*RoofStyle
+	*RoofMatl -> some missing from test set
+	*Exterior1st -> there is a Nan and only one Cblock
+	*Exterior2nd -> dont want to include if not including 1st
+	*MasVnrType -> after one hot encoding, drop N/A and none
+
+Foundation
+BsmtExposure
+BsmtFinType1
+BsmtFinType2
+	*Heating  -> 2 Grav and Wall and no Floor in test
+CentralAir
+	*Electrical  -> there is a nan in the train set and only one Mix
+	*KitchenQual  -> there is an Nan 
+FireplaceQu
+GarageType
+GarageFinish
+	*GarageQual -> missing categories
+PavedDrive
+	*PoolQC -> For the test set these are all NA so do not use
+Fence
+	*MiscFeature -> test data missing some MiscFeature_TenC, already included in MiscVal
+MoSold
+SaleType -> ID #2490 is NA
+SaleCondition
+YrSold -> has range 2006 to 2010, need to one hot encode 
+
+
+*********  numerical features  ******* 
+LotArea
+YearBuilt -> need to change to AgeWhenSold = YrSold - YearBuilt
+YearRemodAdd ->  need to change to ReModAge = YearRemodAdd  - YearBuilt
+	*BsmtFinSF1
+	*BsmtFinSF2
+	*BsmtUnfSF
+	*TotalBsmtSF
+1stFlrSF
+2ndFlrSF
+LowQualFinSF
+GrLivArea
+	*BsmtFullBath
+	*BsmtHalfBath
+FullBath
+HalfBath
+BedroomAbvGr (* neeed to add AbvGr)
+KitchenAbvGr (* needed to add AbvGr)
+TotRmsAbvGrd
+Fireplaces
+	*GarageCars
+	*GarageArea
+WoodDeckSF
+OpenPorchSF
+EnclosedPorch
+3SsnPorch
+ScreenPorch
+PoolArea
+MiscVal
+OverallQual 
+OverallCond 
+ExterQual
+ExterCond
+BsmtQual
+BsmtCond
+HeatingQC
+GarageCond
+Functional > 2 Na and only one Sev
+
+
+*********  Need to be split into categories from numbers but contains N/A ******* 
+	*MasVnrArea -> set N/A to zero
+LotFrontage -> set N/A to zero
+	*GarageYrBlt
+
+
+
+
+
+
+ 
